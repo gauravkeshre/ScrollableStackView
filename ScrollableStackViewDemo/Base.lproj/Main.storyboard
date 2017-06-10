@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="J9R-fO-1jn">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="Lxk-VQ-dYv">
+            <objects>
+                <viewController id="WSf-4G-T7O" customClass="ViewController" customModule="ScrollableStackViewDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZNV-Vj-Yr6"/>
+                        <viewControllerLayoutGuide type="bottom" id="gZE-S9-tKK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eex-zS-MJy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WaU-ps-FSz">
+                                <rect key="frame" x="16" y="64" width="343" height="603"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="phC-lG-a6J">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="10"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="200" constant="10" id="BJP-Le-bcV"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="phC-lG-a6J" firstAttribute="top" secondItem="WaU-ps-FSz" secondAttribute="top" id="MkG-hq-jdE"/>
+                                    <constraint firstAttribute="bottom" secondItem="phC-lG-a6J" secondAttribute="bottom" id="er8-8H-87Z"/>
+                                    <constraint firstItem="phC-lG-a6J" firstAttribute="width" secondItem="WaU-ps-FSz" secondAttribute="width" id="nkK-Sh-T34"/>
+                                    <constraint firstItem="phC-lG-a6J" firstAttribute="leading" secondItem="WaU-ps-FSz" secondAttribute="leading" id="u2A-dH-Ozm"/>
+                                    <constraint firstAttribute="trailing" secondItem="phC-lG-a6J" secondAttribute="trailing" id="z1b-7F-ffm"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="WaU-ps-FSz" secondAttribute="trailing" id="CMc-OW-Zgo"/>
+                            <constraint firstItem="gZE-S9-tKK" firstAttribute="top" secondItem="WaU-ps-FSz" secondAttribute="bottom" id="Og9-OD-JIa"/>
+                            <constraint firstItem="WaU-ps-FSz" firstAttribute="leading" secondItem="eex-zS-MJy" secondAttribute="leadingMargin" id="g3o-G3-9dR"/>
+                            <constraint firstItem="WaU-ps-FSz" firstAttribute="top" secondItem="ZNV-Vj-Yr6" secondAttribute="bottom" id="j5o-zC-87b"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="lC1-Re-qKJ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="YPI-P9-e92">
+                            <connections>
+                                <action selector="handleAddbutton:" destination="WSf-4G-T7O" id="s9m-r4-e68"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="stackView" destination="phC-lG-a6J" id="GSP-PZ-vVp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HhH-gI-JRZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3280.8000000000002" y="748.87556221889065"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="g89-Be-IVM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="J9R-fO-1jn" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NkB-yC-F9i">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="WSf-4G-T7O" kind="relationship" relationship="rootViewController" id="SQg-9z-xMb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gfb-Gk-aON" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2341.5999999999999" y="748.87556221889065"/>
+        </scene>
+    </scenes>
+</document>
